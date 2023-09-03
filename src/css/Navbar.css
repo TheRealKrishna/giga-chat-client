@@ -1,0 +1,34 @@
+.loginButton{
+    background-color: #fff;
+    margin-right:5px;
+    font-family: 'ADLaM Display', cursive;
+    color: black;
+}
+
+.loginButton:hover{
+    background-color: gray;
+    color: black;
+}
+
+.signupButton{
+    font-family: 'ADLaM Display', cursive;
+    background-color: #fff;
+    margin-right:20px;
+    color: black;
+}
+.signupButton:hover{
+    background-color: gray;
+    color: black;
+}
+
+.logoutButton{
+    background-color: #ff7070;
+    margin-right:20px;
+    color: white;   
+    font-family: 'ADLaM Display', cursive;
+}
+
+.logoutButton:hover{
+    background-color: #a00000;
+    color: white;
+}

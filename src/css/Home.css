@@ -1,0 +1,17 @@
+.title{
+    font-family: 'ADLaM Display', cursive;;
+}
+
+.blueCirclesBackground {
+    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+    height: 430px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/blueCircles.svg");
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat:repeat;
+}
