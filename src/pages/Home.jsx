@@ -1,16 +1,17 @@
 import React from 'react'
-import "../css/Home.css"
+import Styles from "../css/Home.module.css"
 import manConversation from "../images/man-conversation.png"
 import Typewriter from 'typewriter-effect';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
     <>
-    <div className='blueCirclesBackground' />
+    <div className={Styles.blueCirclesBackground} />
     <div className='container text-center mt-5 text-white'>
-      <h1 className='title'>Giga Chat</h1>
-      <img src={manConversation} alt="" />
-      <h2>
+      <h1 className={Styles.title}>Giga Chat</h1>
+      <img src={manConversation} alt="" className='mt-4' style={{maxWidth:"100%"}} />
+      <h2 className='mt-4'>
       <Typewriter
         options={{
           strings: ['Join The World Of Chads...', 'Chat With Other Chads...', 'No Normies Allowed Here...'],
@@ -19,9 +20,30 @@ export default function Home() {
           delay:100,
           pauseFor:2000,
         }}
-      />
+        />
       </h2>
-    </div>
+      </div>
+      <div className={`${Styles.buttonContainer} d-flex justify-content-center`}>
+      <Link to="/auth/login"><button className={`btn ${Styles.loginButton}`} aria-current="page"><i className="fa-solid fa-right-to-bracket" style={{color: "#000000"}}></i> Login</button></Link>
+      <Link to="/auth/signup"><button className={`btn ${Styles.signupButton}`} aria-current="page"><i className="fa-solid fa-user-plus" style={{color: "#000000"}}></i> Signup</button></Link>
+      </div>
+      <div className={`container ${Styles.statistics}`}>
+        <div className={`${Styles.numberOfUsers} ${Styles.statisticsItem}`}>
+        <i className="fa-solid fa-user-ninja icons" style={{color: "#000000"}}></i>
+        <h2>800+</h2>
+        <h3>Chads Joined...</h3>
+        </div>
+        <div className={`${Styles.numberOfMessages} ${Styles.statisticsItem}`}>
+        <i className="fa-solid fa-comments" style={{color: "#000000"}}></i>
+        <h2>98000+</h2>
+        <h3>Messages Sent...</h3>
+        </div>
+        <div className={`${Styles.numberOfUsersBanned} ${Styles.statisticsItem}`}>
+        <i className="fa-solid fa-skull" style={{color: "#000000"}}></i>
+          <h2>200+</h2>
+          <h3>Normies Banned...</h3>
+        </div>
+      </div>
     </>
   )
 }

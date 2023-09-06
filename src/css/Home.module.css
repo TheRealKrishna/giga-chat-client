@@ -1,0 +1,85 @@
+.title{
+    font-family: 'ADLaM Display', cursive;;
+}
+
+.blueCirclesBackground {
+    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/blueCircles.svg");
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat:repeat;
+}
+
+.buttonContainer{
+    position: absolute;
+    z-index: 999;
+    top: 478px;
+    width: 100%;
+}
+
+.loginButton{
+    background-color: #ffc400;
+    margin-right:5px;
+    font-size: 20px;
+    font-family: 'ADLaM Display', cursive;
+    color: black;   
+    box-shadow: 0 10px 20px -10px #ffc400;
+}
+
+.loginButton:hover{
+    background-color: #ae8600;
+    color: black;
+    box-shadow: 0 10px 20px -10px #ae8600;
+}
+
+.signupButton{
+    font-family: 'ADLaM Display', cursive;
+    background-color: #aa00ff;
+    font-size: 20px;
+    margin-right:20px;
+    color: black;
+    box-shadow: 0 10px 20px -10px #aa00ff;
+}
+.signupButton:hover{
+    background-color: #6d00a4;
+    color: black;
+    box-shadow: 0 10px 20px -10px #6d00a4;
+}
+
+@media (max-width: 600px) {
+    .loginButton{
+        font-size: 15px !important;
+    }
+    .signupButton{
+        font-size: 15px !important;
+    }
+  }
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+
+.statisticsItem {
+    margin: 40px 100px;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (max-width: 800px) {
+    .statistics {
+      flex-direction: column;
+    }
+}

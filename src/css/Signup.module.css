@@ -1,0 +1,103 @@
+.signupBackground{
+    background-image: linear-gradient(200deg, #0025ff, #00eaff);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signupContainer {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 55px 1px black;
+    text-align: center;
+    min-width: 250px;
+    width: 80%;
+    max-width: 800px;
+    min-height: 600px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signUpAndLoginButtonContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.signupButton{
+    font-size: 20px;
+    color: black;
+    font-family:cursive;
+    font-weight: bolder;
+    background-image: linear-gradient(200deg, #0025ff, #00eaff);
+    display:inline-block;
+    width:100%;
+    border-radius: 4px;
+}
+
+.loginButton{
+    font-size: 20px;
+    color: black;
+    font-family:cursive;
+    font-weight: bolder;
+    display:inline-block;
+    width:100%;
+    border-radius: 4px;
+}
+
+.signupInput{
+    outline: none;
+    border: none;
+    margin: 10px 0px;
+    width: 80%;
+}
+
+@media (max-width: 520px){
+    .signupInput{
+        width: 65%;
+    }
+}
+
+.signupInputIcons{  
+    padding: 15px;
+}
+
+.usernameBox{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60%;
+    text-align: left;
+    margin-bottom: 15px;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.emailBox{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60%;
+    text-align: left;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.passwordBox{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60%;
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}

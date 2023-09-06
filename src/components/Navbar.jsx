@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "../css/Navbar.css"
+import Styles from "../css/Navbar.module.css"
 
 export default function Navbar() {
   return (
@@ -13,9 +13,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul className="navbar-nav">
             <li className="nav-item">
-            <Link to="/auth/login"><button className="btn loginButton" aria-current="page">Login</button></Link>
-            <Link to="/auth/signup"><button className="btn signupButton" aria-current="page">Signup</button></Link>
-            {/* <button className="btn logoutButton" aria-current="page">Logout</button> */}
+            
             </li>
         </ul>
         </div>
