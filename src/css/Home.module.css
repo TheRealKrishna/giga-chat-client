@@ -51,6 +51,11 @@
     color: black;
     box-shadow: 0 10px 20px -10px #6d00a4;
 }
+.signupButton:visited{
+    background-color: #6d00a4;
+    color: black;
+    box-shadow: 0 10px 20px -10px #6d00a4;
+}
 
 @media (max-width: 600px) {
     .loginButton{

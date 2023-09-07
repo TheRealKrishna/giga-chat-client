@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from "../../css/Login.module.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import gigaChadLogo from "../../images/gigaChadLogo.png"
+import { toast } from 'react-toastify';
 
 export default function Login() {
   const [passwordVisibility, setPasswordVisibility] = useState(false)
   const [passwordType, setPasswordType] = useState("password")
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -18,8 +20,42 @@ export default function Login() {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
+    toast.promise(new Promise(async (resolve, reject) => {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
+        method: "post",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      const json = await response.json();
+      if (json.success) {
+        localStorage.setItem("auth-token", json.authToken)
+        navigate("/dashboard")
+        resolve();
+      }
+      else {
+        reject(json.error)
+      }
+    }),
+      {
+        pending: 'Logging in...',
+        success: 'Logged in successfully.',
+        error: {
+          render({ data }) {
+            return data
+          }
+        }
+      }
+    )
   };
+
+  useEffect(()=>{
+    if(localStorage.getItem("auth-token")) {
+      navigate("/dashboard");
+    }
+  })
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
