@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import Styles from "../css/Home.module.css"
 import manConversation from "../images/man-conversation.png"
 import Typewriter from 'typewriter-effect';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function Home() {
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("auth-token"))
+  
+  const handleLogout = ()=>{
+    localStorage.removeItem("auth-token");
+    setLoggedIn(false)
+    toast.error("Logged out successfully.")
+  }
+
   return (
     <>
     <div className={Styles.blueCirclesBackground} />
@@ -24,8 +33,19 @@ export default function Home() {
       </h2>
       </div>
       <div className={`${Styles.buttonContainer} d-flex justify-content-center`}>
-      <Link to="/auth/login"><button className={`btn ${Styles.loginButton}`} aria-current="page"><i className="fa-solid fa-right-to-bracket" style={{color: "#000000"}}></i> Login</button></Link>
-      <Link to="/auth/signup"><button className={`btn ${Styles.signupButton}`} aria-current="page"><i className="fa-solid fa-user-plus" style={{color: "#000000"}}></i> Signup</button></Link>
+      {
+        loggedIn
+        ? 
+        <Fragment>
+        <Link to="/chat"><button className={`btn ${Styles.dashboardButton}`} aria-current="page"><i className="fa-solid fa-message" style={{color: "#000000"}}></i> Chat</button></Link>
+        <button onClick={handleLogout} className={`btn ${Styles.logoutButton}`} aria-current="page"><i className="fa-solid fa-power-off" style={{color: "#000000"}}></i> Logout</button>
+        </Fragment>
+        :
+        <Fragment>
+          <Link to="/auth/login"><button className={`btn ${Styles.loginButton}`} aria-current="page"><i className="fa-solid fa-right-to-bracket" style={{color: "#000000"}}></i> Login</button></Link>
+          <Link to="/auth/signup"><button className={`btn ${Styles.signupButton}`} aria-current="page"><i className="fa-solid fa-user-plus" style={{color: "#000000"}}></i> Signup</button></Link>
+        </Fragment>
+      }
       </div>
       <div className={`container ${Styles.statistics}`}>
         <div className={`${Styles.numberOfUsers} ${Styles.statisticsItem}`}>

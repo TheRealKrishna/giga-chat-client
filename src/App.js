@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import Footer from './components/Footer';
-import ChatPage from './pages/dashboard/ChatPage';
+import ChatPage from './pages/chat/ChatPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -28,7 +28,7 @@ function App() {
         <Route exact path = "/" element={<><Navbar/><Home/><Footer/></>}/>
         <Route exact path = "/auth/login" element={<><Login/></>}/>
         <Route exact path = "/auth/signup" element={<><Signup/></>}/>
-        <Route exact path = "/dashboard" element={<><ChatPage/></>}/>
+        <Route exact path = "/chat" element={<><ChatPage/></>}/>
       </Routes>
     </BrowserRouter>
   );

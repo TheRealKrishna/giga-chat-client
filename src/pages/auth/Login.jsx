@@ -31,7 +31,7 @@ export default function Login() {
       const json = await response.json();
       if (json.success) {
         localStorage.setItem("auth-token", json.authToken)
-        navigate("/dashboard")
+        navigate("/chat")
         resolve();
       }
       else {

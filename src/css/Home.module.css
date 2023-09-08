@@ -38,6 +38,21 @@
     box-shadow: 0 10px 20px -10px #ae8600;
 }
 
+.dashboardButton{
+    background-color: #ffc400;
+    margin-right:5px;
+    font-size: 20px;
+    font-family: 'ADLaM Display', cursive;
+    color: black;   
+    box-shadow: 0 10px 20px -10px #ffc400;
+}
+
+.dashboardButton:hover{
+    background-color: #ae8600;
+    color: black;
+    box-shadow: 0 10px 20px -10px #ae8600;
+}
+
 .signupButton{
     font-family: 'ADLaM Display', cursive;
     background-color: #aa00ff;
@@ -51,10 +66,19 @@
     color: black;
     box-shadow: 0 10px 20px -10px #6d00a4;
 }
-.signupButton:visited{
-    background-color: #6d00a4;
+
+.logoutButton{
+    font-family: 'ADLaM Display', cursive;
+    background-color: #ff0000;
+    font-size: 20px;
+    margin-right:20px;
     color: black;
-    box-shadow: 0 10px 20px -10px #6d00a4;
+    box-shadow: 0 10px 20px -10px #ff0000;
+}
+.logoutButton:hover{
+    background-color: #9b0000;
+    color: black;
+    box-shadow: 0 10px 20px -10px #9b0000;
 }
 
 @media (max-width: 600px) {
@@ -74,7 +98,6 @@
     text-align: center;
     margin-top: 150px;
 }
-
 
 .statisticsItem {
     margin: 40px 100px;
