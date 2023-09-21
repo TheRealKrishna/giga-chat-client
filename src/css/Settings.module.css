@@ -1,0 +1,79 @@
+.blueCirclesBackground {
+    width: 100%;
+    pointer-events: none;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(".././images/blueCircles.svg");
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.navbar {
+    height: 8vh;
+    background: rgba(192, 248, 255, 0.31);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(178, 243, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a:has(>.title) {
+    font-family: 'ADLaM Display', cursive;
+    color: black;
+    text-decoration: none;
+    margin: 0px 75px;
+}
+
+
+.currentUser{
+    display: flex;
+    flex: 15;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentUser:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.currentUser > img{
+    width: 50px;
+    height: 50px;
+    object-fit:cover;
+    overflow: hidden;
+    border-radius:50%;
+}   
+
+.currentUser > span{
+    color: black;
+    font-size: bolder;
+    padding: 15px;
+}
+
+.settingsIcon{
+    display: flex;
+    flex:1;
+    font-size: large;
+    cursor: pointer;
+    color: "#000000";
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.settingsIcon:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.settingsIcon > i {
+    color:black;
+}

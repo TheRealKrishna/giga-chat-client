@@ -51,7 +51,7 @@ export default function Signup() {
 
   useEffect(()=>{
     if(localStorage.getItem("auth-token")) {
-      navigate("/dashboard");
+      navigate("/chat");
     }
   })
 

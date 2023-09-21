@@ -27,7 +27,7 @@ a:has(>.title) {
     font-family: 'ADLaM Display', cursive;
     color: black;
     text-decoration: none;
-    margin: 0px 87px;
+    margin: 0px 75px;
 }
 
 .currentUser{
@@ -66,10 +66,15 @@ a:has(>.title) {
     align-items: center;
     height: 100%;
     width: 100%;
+    text-decoration: none;
 }
 
 .settingsIcon:hover{
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.settingsIcon > i {
+    color:black;
 }
 
 .contactsArea {
@@ -84,15 +89,30 @@ a:has(>.title) {
 
 .contactSearch{
     display: flex;
-    padding: 5px 30px;
+    padding: 5px;
     background-color: rgba(177, 177, 177, 0.293);
 }
+
+.contacts{
+    max-height: 85vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.contacts::-webkit-scrollbar {
+    width: .5em;
+  }
+   
+.contacts::-webkit-scrollbar-thumb {
+    background-color: rgb(98, 98, 98);
+    border-radius: 5px;
+  }
 
 .contactSearchInput{
     outline: none;
     border: none;
     background-color: transparent;
-    flex: 5;
+    flex: 2;
 }
 
 .contactSearchInput::placeholder{
@@ -112,6 +132,11 @@ a:has(>.title) {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.contactItemActive{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
 .contactItemImage{
     width: 50px;
     height: 50px;
@@ -126,9 +151,16 @@ a:has(>.title) {
     padding: 15px;
 }
 
+.newMessageIndicator{
+    padding: 0px 6px;
+    color: white;
+    border-radius:50%;
+    background-color: red;
+}
+
 .chatArea {
     height: 92vh;
-    width: 100%;
+    width: 80%;
     background: rgba(27, 0, 227, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -136,13 +168,31 @@ a:has(>.title) {
     border: 1px solid rgba(60, 0, 255, 0.3);
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 }
+
+.chat{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+ .chat::-webkit-scrollbar {
+    width: .5em;
+  }
+   
+  .chat::-webkit-scrollbar-track {
+    
+  }
+   
+  .chat::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 166, 255);
+    border-radius: 5px;
+  }
 
 .leftChat{
     margin: 5px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .incomingChat{
@@ -152,12 +202,13 @@ a:has(>.title) {
     font-family: 'Libre Baskerville', serif;
     border-radius: 10px;
     padding:10px;
+    word-wrap: break-word;
 }
 
 .rightChat{
     margin: 5px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .outgoingChat{
@@ -167,6 +218,15 @@ a:has(>.title) {
     font-family: 'Libre Baskerville', serif;
     border-radius: 10px;
     padding:10px;
+    word-wrap: break-word;
+}
+
+.timeStamp{
+    font-size: 9px;
+    display: flex;
+    justify-content: right;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 
 .sendMessage{
@@ -178,18 +238,24 @@ a:has(>.title) {
     background-color: white;
     padding: 5px;
     display: flex;
-
 }
 
-.sendMessageemojiSelector{
+.emojiSelectorBox{
+    margin: 55px 5px;
+    position: absolute;
+}
+
+.sendMessageEmojiSelector{
     color: #ffc800;
     font-size: 25px;
     margin: 0px 5px;
+    cursor: pointer;
 }
 
 .attachmentSelector{
     font-size: 25px;
     margin: 0px 5px;
+    cursor: pointer;
 }
 
 .sendMessageInput{
@@ -208,4 +274,56 @@ a:has(>.title) {
     font-size: 25px;
     margin: 0px 5px;
     color: #005eff;
+}
+
+@media (max-width: 1100px) {
+    .contactsArea{
+        width: 30%;
+    }
+    .chatArea{
+        width: 70%;
+    }
+}
+
+@media (max-width: 700px) {
+    a:has(>.title) {
+        font-family: 'ADLaM Display', cursive;
+        color: black;
+        text-decoration: none;
+        margin: 0px 5px;
+    }
+    .contactsArea{
+        width: 100%;
+    }
+    .chatArea{
+        width: 100%;
+    }
+
+    .emojiSelectorBox{
+        
+    }
+
+    .currentUser{
+        display: flex;
+        flex: 5;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .settingsIcon{
+        display: flex;
+        flex:2;
+    }
+    @document url("/chat"){
+        .contactsArea{
+             
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .sendMessageBox{
+        overflow: hidden;
+    }
 }

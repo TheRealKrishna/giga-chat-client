@@ -52,7 +52,7 @@ export default function Login() {
 
   useEffect(()=>{
     if(localStorage.getItem("auth-token")) {
-      navigate("/dashboard");
+      navigate("/chat");
     }
   })
 
@@ -69,11 +69,11 @@ export default function Login() {
           <div className="container d-flex flex-column align-items-center">
             <h2 style={{ fontFamily: "arial", margin: '40px', fontWeight: "bolder" }}>Login</h2>
             <div className={Styles.usernameBox}>
-              <i class={`${Styles.loginInputIcons} fa-regular fa-user `} style={{ color: "#000000" }}></i><input type="text" name="username" required {...register("username")} placeholder='Username or Email' className={Styles.loginInput} />
+              <i className={`${Styles.loginInputIcons} fa-regular fa-user `} style={{ color: "#000000" }}></i><input type="text" name="username" required {...register("username")} placeholder='Username or Email' className={Styles.loginInput} />
             </div>
             <div className={Styles.passwordBox}>
-              <i class={`${Styles.loginInputIcons} fa-solid fa-lock`} style={{ color: "#000000" }}></i><input type={passwordType} name="password"
-                {...register("password")} minLength={8} placeholder='Password' className={Styles.loginInput} required /><i class={`${Styles.loginInputIcons} fa-solid ${passwordVisibility ? "fa-eye-slash" : "fa-eye"}`} style={{ color: "#000000", cursor: "pointer" }} onClick={handlePasswordVisibility}></i>
+              <i className={`${Styles.loginInputIcons} fa-solid fa-lock`} style={{ color: "#000000" }}></i><input type={passwordType} name="password"
+                {...register("password")} minLength={8} placeholder='Password' className={Styles.loginInput} required /><i className={`${Styles.loginInputIcons} fa-solid ${passwordVisibility ? "fa-eye-slash" : "fa-eye"}`} style={{ color: "#000000", cursor: "pointer" }} onClick={handlePasswordVisibility}></i>
             </div>
           </div>
           <button className="btn btn-primary rounded-pill mt-4" style={{padding:"5px 40px"}} type="submit">Login</button>
